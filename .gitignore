@@ -1,0 +1,6 @@
+*.zip
+*.html
+*.pyc
+
+.vscode
+.pytest-cache
