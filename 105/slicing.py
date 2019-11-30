@@ -1,4 +1,6 @@
 from string import ascii_lowercase, punctuation
+import re
+from collections import Counter
 
 text = """
 One really nice feature of Python is polymorphism: using the same operation
@@ -29,3 +31,10 @@ def slice_and_dice(text: str = text) -> list:
         results.append(word)
     return results
     
+def slice_and_dice_2(text: str = text) -> dict:
+    results = []
+    lines = text.strip().split('\n')
+    for line in lines:
+        line = re.sub(fr"[{punctuation}\d]", "", line).lower()
+        results.extend(line.split())
+    return Counter(results)
