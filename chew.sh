@@ -2,7 +2,7 @@
 
 # get the new name of the exercise directory
 
-newdir=$(echo *.zip | grep -E -o '\d{3}')
+newdir=$(echo *.zip | grep -E -o '\d{1,3}')
 
 # make and cd into the new dir
 
