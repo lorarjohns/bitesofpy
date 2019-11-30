@@ -24,10 +24,11 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 """
-replacements = 'aeiou'
+to_replace = 'aeiou'
+replace_with = '*'
 
 
-def strip_vowels(text: str, replacements: str) -> Tuple[str, int]:
+def strip_vowels(text: str, to_replace: str, replace_with: str) -> Tuple[str, int]:
     """Replace all vowels in the input text string by a star
        character (*).
        Return a tuple of (replaced_text, number_of_vowels_found)
@@ -42,4 +43,4 @@ def strip_vowels(text: str, replacements: str) -> Tuple[str, int]:
        of Python's new type hinting:
        https://docs.python.org/3/library/typing.html"""
 
-    return re.subn(fr"[{replacements}]", r"*", text, flags=re.I)
+    return re.subn(fr"[{to_replace}]", fr"{replace_with}", text, flags=re.I)
